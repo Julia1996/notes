@@ -1,0 +1,35 @@
+<% layout('./layout/page') -%>
+<% block('title', "Заметки") -%>
+
+
+<p>Добро пожаловать, <%=user.get('username')%></p>
+
+<% console.log(user.notes, 'template'); if (user.notes.length){
+    for (let i = 0; i < user.notes.length; i++) { %>
+
+    <form class="form-horizontal note" method="post" action="/change-note">
+        <input type="hidden" name="num" value="<%= i %>">
+        <p><textarea name="text" class="form-control"><%= user.notes[i] %></textarea></p>
+        <p>
+            <input type="submit" name="act" value="Изменить" class="btn btn-primary">
+            <input type="submit" name="act" value="Удалить" class="btn btn-primary">
+        </p>
+    </form>
+
+<% } } %>
+
+<h3>Добавить новую:</h3>
+<form class="form-horizontal" action="/notes" method="post">
+    <div class="form-group">
+        <label for="input-text" class="col-lg-2 control-label">Текст заметки</label>
+
+        <div class="col-lg-10">
+            <textarea name="text" class="form-control" id="input-text"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.note {
+  background: #eee;
+  padding: 10px 10px 1px;
+  border-radius: 10px;
+  margin-bottom: 17px;
+}

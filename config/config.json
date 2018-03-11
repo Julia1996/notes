@@ -1,0 +1,16 @@
+{
+  "port": 2000,
+  "mongoose": {
+    "uri": "mongodb://localhost/chat",
+    "options": {}
+  },
+  "session": {
+    "secret": "secret",
+    "key": "sid",
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  }
+}
